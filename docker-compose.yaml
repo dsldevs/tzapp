@@ -24,7 +24,7 @@ services:
     env_file:
       - env/mysql.env
     volumes:
-      - ./db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
   composer:
     build:
       context: dockerfiles
@@ -38,6 +38,8 @@ services:
     volumes:
       - ./src:/var/www/tzapp
     entrypoint: [ "php", "/var/www/tzapp/artisan" ]
+volumes:
+  db_data:
 
 
 

@@ -11,6 +11,7 @@ use App\Models\log;
 use App\Models\Role;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Database\Factories\data1Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
@@ -19,6 +20,9 @@ class AdminController extends Controller
 {
     public function index()
     {
+
+
+
        $role = Role::all();
        return view('admin', ['users'=>User::all(), 'role'=>$role]);
     }
